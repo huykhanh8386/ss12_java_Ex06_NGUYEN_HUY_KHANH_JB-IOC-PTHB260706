@@ -1,0 +1,30 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("--- SO SANH GIA SAN PHAM SAU KHUYEN MAI ---");
+        System.out.println("\n--- NHAP SAN PHAM DIEN TU ---");
+        System.out.print("Nhap ma san pham: ");
+        String electronicId = sc.nextLine();
+        System.out.print("Nhap ten san pham: ");
+        String electronicName = sc.nextLine();
+        System.out.print("Nhap gia niem yet: ");
+        double electronicPrice = sc.nextDouble();
+        sc.nextLine();
+        System.out.println("\n--- NHAP SAN PHAM THOI TRANG ---");
+        System.out.print("Nhap ma san pham: ");
+        String fashionId = sc.nextLine();
+        System.out.print("Nhap ten san pham: ");
+        String fashionName = sc.nextLine();
+        System.out.print("Nhap gia niem yet: ");
+        double fashionPrice = sc.nextDouble();
+        Product electronicProduct = new ElectronicProduct(electronicId, electronicName, electronicPrice);
+        Product fashionProduct = new FashionProduct(fashionId, fashionName, fashionPrice);
+        System.out.println();
+        System.out.println("+-------------------------------------------------------+");
+        System.out.println("|          BANG GIA SAN PHAM KHUYEN MAI                |");
+        System.out.println("+-------------------------------------------------------+");
+        System.out.printf("| [%-15s] Niem yet: %,.2f | Sau KM: %,.2f |%n", electronicProduct.getName(), electronicProduct.getOriginalPrice(), electronicProduct.getDiscountedPrice());
+        System.out.printf("| [%-15s] Niem yet: %,.2f | Sau KM: %,.2f |%n", fashionProduct.getName(), fashionProduct.getOriginalPrice(), fashionProduct.getDiscountedPrice());
+    }
+}
